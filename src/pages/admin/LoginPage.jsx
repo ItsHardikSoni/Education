@@ -3,13 +3,13 @@ import { useNavigate } from 'react-router-dom'
 import { useAuth } from '../../context/AuthContext'
 
 export default function AdminLoginPage() {
-  const [credentials, setCredentials] = useState({ id: '', password: '' })
+  const [credentials, setCredentials] = useState({ email: '', password: '' })
   const { login } = useAuth()
   const navigate = useNavigate()
 
   const handleSubmit = async (e) => {
     e.preventDefault()
-    const success = await login(credentials.id, credentials.password)
+    const success = await login(credentials.email, credentials.password)
     if (success) {
       navigate('/admin/dashboard')
     } else {
@@ -27,8 +27,8 @@ export default function AdminLoginPage() {
             <input
               type="text"
               className="w-full p-2 border rounded"
-              value={credentials.id}
-              onChange={(e) => setCredentials({ ...credentials, id: e.target.value })}
+              value={credentials.email}
+              onChange={(e) => setCredentials({ ...credentials, email: e.target.value })}
             />
           </div>
           <div className="mb-6">
