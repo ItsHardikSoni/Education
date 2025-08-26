@@ -66,7 +66,7 @@ export default function Footer() {
           <p className="text-gray-400">© 2024 Developer's Library. All rights reserved.</p>
           <div className="mt-4">
             <Link to="/admin/login" className="text-blue-400 hover:text-blue-300 transition-colors">
-              Admin Login Page
+              Admin Login
             </Link>
           </div>
         </div>
