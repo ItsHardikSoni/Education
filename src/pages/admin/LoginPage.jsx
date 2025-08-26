@@ -11,6 +11,7 @@ export default function AdminLoginPage() {
     e.preventDefault()
     const success = await handleLogin(credentials.email, credentials.password)
     if (success) {
+      alert("Login successful!")
       navigate("/admin/dashboard", { replace: true });
     } else {
       alert('Invalid credentials')
