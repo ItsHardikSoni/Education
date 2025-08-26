@@ -1,16 +1,16 @@
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
+import { useAuth } from '../../context/AuthContext'
 
 export default function AdminLoginPage() {
   const [credentials, setCredentials] = useState({ id: '', password: '' })
-  const navigate = useNavigate() 
+  const { login } = useAuth()
+  const navigate = useNavigate()
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
-    // Add your authentication logic here
-    // For demo purposes, using simple credentials
-    if (credentials.id === import.meta.env.VITE_ADMIN_ID && credentials.password === import.meta.env.VITE_ADMIN_PASS) {
-      localStorage.setItem('adminAuth', 'true')
+    const success = await login(credentials.id, credentials.password)
+    if (success) {
       navigate('/admin/dashboard')
     } else {
       alert('Invalid credentials')
@@ -23,7 +23,7 @@ export default function AdminLoginPage() {
         <h2 className="text-2xl font-bold mb-6 text-center">Admin Login</h2>
         <form onSubmit={handleSubmit}>
           <div className="mb-4">
-            <label className="block text-gray-700 mb-2">Admin ID</label>
+            <label className="block text-gray-700 mb-2">Admin Email</label>
             <input
               type="text"
               className="w-full p-2 border rounded"
