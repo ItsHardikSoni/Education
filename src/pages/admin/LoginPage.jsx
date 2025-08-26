@@ -4,12 +4,12 @@ import { useAuth } from '../../context/AuthContext'
 
 export default function AdminLoginPage() {
   const [credentials, setCredentials] = useState({ email: '', password: '' })
-  const { login } = useAuth()
+  const { handleLogin } = useAuth()
   const navigate = useNavigate()
 
   const handleSubmit = async (e) => {
     e.preventDefault()
-    const success = await login(credentials.email, credentials.password)
+    const success = await handleLogin(credentials.email, credentials.password)
     if (success) {
       navigate('/admin/dashboard')
     } else {
