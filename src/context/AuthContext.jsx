@@ -14,7 +14,8 @@ export function AuthProvider({ children }) {
       .select('*')
       .eq('email', email)
       .eq('password', password)
-      .single()
+      .maybeSingle()
+
 
       console.log("Supabase response:", { data, error })
 
