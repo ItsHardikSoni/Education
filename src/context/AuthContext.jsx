@@ -19,7 +19,7 @@ export function AuthProvider({ children }) {
       console.log("Supabase response:", { data, error })
 
     if (error || !data) {
-      console.error(error?.message || 'Invalid credentials')
+      // console.error(error?.message || 'Invalid credentials')
       return false
     }
 
