@@ -5,6 +5,7 @@ const AuthContext = createContext(null)
 
 export function AuthProvider({ children }) {
   const [isAuthenticated, setIsAuthenticated] = useState(false)
+    const [user, setUser] = useState(null)
 
   async function handleLogin(email, password) {
   console.log("Trying to login with:", email, password);
@@ -28,14 +29,20 @@ export function AuthProvider({ children }) {
     return false;
   }
 
-  alert("Login successful!");
+  // ✅ Mark user as authenticated
+    setIsAuthenticated(true)
+    setUser(data)
   return true;
 }
 
-  const logout = () => setIsAuthenticated(false)
+  const logout = () => {
+    setIsAuthenticated(false)
+    setUser(null)
+  }
+
 
   return (
-    <AuthContext.Provider value={{ isAuthenticated, handleLogin, logout }}>
+    <AuthContext.Provider value={{ isAuthenticated, user, handleLogin, logout }}>
       {children}
     </AuthContext.Provider>
   )
