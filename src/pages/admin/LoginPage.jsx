@@ -11,7 +11,7 @@ export default function AdminLoginPage() {
     e.preventDefault()
     const success = await handleLogin(credentials.email, credentials.password)
     if (success) {
-      navigate('/admin/dashboard')
+      navigate("/admin/dashboard", { replace: true });
     } else {
       alert('Invalid credentials')
     }
@@ -27,7 +27,7 @@ export default function AdminLoginPage() {
             <input
               type="text"
               className="w-full p-2 border rounded"
-              value={credentials.email}
+              value={credentials.email} required
               onChange={(e) => setCredentials({ ...credentials, email: e.target.value })}
             />
           </div>
@@ -36,7 +36,7 @@ export default function AdminLoginPage() {
             <input
               type="password"
               className="w-full p-2 border rounded"
-              value={credentials.password}
+              value={credentials.password} required
               onChange={(e) => setCredentials({ ...credentials, password: e.target.value })}
             />
           </div>
