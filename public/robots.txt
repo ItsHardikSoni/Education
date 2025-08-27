@@ -1,0 +1,32 @@
+User-agent: *
+Allow: /
+
+Allow: /about
+Allow: /home
+Allow: /projects
+Allow: /services
+Allow: /contact
+Allow: /sitemap.xml
+Allow: /site.webmanifest
+Allow: /apple-touch-icon.png
+Allow: /icon.png
+Allow: /profilePic.jpg
+
+Disallow: /admin/
+Disallow: /private/
+Disallow: /api/
+Disallow: /cdn-cgi/
+
+# Sitemap
+Sitemap: https://nexoraitsolution.in/sitemap.xml
+
+# Disallow admin areas (if any)
+Disallow: /admin/
+Disallow: /private/
+
+# Allow all search engines
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /

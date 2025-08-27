@@ -1,0 +1,23 @@
+{
+    "name": "Nexora It Solution - IT Services & Solutions",
+    "short_name": "Nexora It Solution",
+    "description": "Nexora IT Solution is a leading IT company in Patna offering professional IT services and solutions, including web development, software development, mobile app development, and IT consulting. We help businesses in Bihar and beyond grow with innovative digital solutions.",
+    "icons": [
+      {
+        "src": "/android-chrome-192x192.png",
+        "sizes": "192x192",
+        "type": "image/png"
+      },
+      {
+        "src": "/android-chrome-512x512.png",
+        "sizes": "512x512",
+        "type": "image/png"
+      }
+    ],
+    "theme_color": "#0284c7",
+    "background_color": "#ffffff",
+    "display": "standalone",
+    "start_url": "/",
+    "scope": "/"
+  }
+  
